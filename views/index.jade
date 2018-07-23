@@ -1,0 +1,44 @@
+html
+  head
+    title
+      | CAPTURE SCREEN
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src='/javascripts/webcam.js')
+  body
+    #grad1
+      #my_camera
+        script(language='JavaScript').
+          Webcam.attach('#my_camera');
+          var path = "";
+          //clicks a pic and shows the captured image
+          function clickAndPreview() {
+          Webcam.snap( function(data_uri) {
+          path = data_uri;
+          document.getElementById('picture').innerHTML = '<img src="'+data_uri+'"/>';
+          document.getElementById('my_result').style.zIndex = "4";
+          });
+          }
+          //post the clicked image to server and redirects to effects/edit page
+          function uploadAndRedirect(){
+          Webcam.upload( path, '/getpic', function(code, text) {
+          if (text === "success") {
+          window.location.href="http://localhost:3000/effects";
+          }
+          } );
+          }
+          //set the zindex of div my_result to lower than the div my_camera to move it to lowest in vertical stack
+          function backToWebcam(){
+          document.getElementById('my_result').style.zIndex = "1";
+          }
+        // capture button div
+        #take_pic
+          button.btn(onclick='clickAndPreview()')
+      // preview div
+      #my_result
+        #picture
+        // confirm button div
+        #confirm
+          button.confirm_btn(onclick='uploadAndRedirect()')
+        // reject button div
+        #reject
+          button.reject_btn(onclick='backToWebcam()')  RETAKE 

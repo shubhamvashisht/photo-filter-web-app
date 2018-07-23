@@ -1,0 +1,130 @@
+			#grad1 {
+    			height: 100%;
+    			background: linear-gradient(steelblue, black);
+    		}
+
+    		#my_camera {
+				width:640px;
+			 	height:480px;
+			    position:fixed;
+			    top: 50%;
+			    left: 50%;
+			    margin-top: -240px;
+			    margin-left: -320px;
+			    z-index: 2;
+    		}
+
+    		#my_result {
+    			width:640px;
+			 	height:480px;
+			    position:absolute;
+			    top: 50%;
+			    left: 50%;
+			    margin-top: -240px;
+			    margin-left: -320px;
+			    z-index: 1;
+    		}
+
+    		#take_pic {
+    			height: 60px;
+    			width: 60px;
+    			position: absolute;
+    			bottom: 25px;
+    			left: 270px;
+    			z-index: 3;
+    		}
+
+    		#take_pic .btn {
+    			height: 100%;
+    			width: 100%;
+    			background: url(/images/camera-shutter.png);
+    			background-size: 60px 60px;
+				border:none;
+    		}
+
+    		#confirm {
+    			height: 60px;
+    			width: 60px;
+    			position: absolute;
+    			bottom: 25px;
+    			left: 150px;
+    		}
+
+    		#confirm .confirm_btn {
+				height:100%;
+				width:100%;
+				background: url(/images/checkmark.png);
+				background-repeat: no-repeat;
+				background-size: 60px 60px;
+				border:none;
+    		}
+
+    		#reject {
+    			height: 30px;
+    			width: 30px;
+    			position: absolute;
+    			bottom: 25px;
+    			right: 150px;
+    		}
+
+    		#reject .reject_btn {
+                color: white;
+                padding: 0;
+                border: none;
+                background: none;
+    		}
+
+            #filter_sub {
+                width:640px;
+                height:480px;
+                position:fixed;
+                top: 50%;
+                left: 50%;
+                margin-top: -240px;
+                margin-left: -320px;
+            }
+
+            #filter_sub .download_image {
+                display: inline-block;
+                vertical-align: middle;
+                margin-top: 10px;
+                margin-left: 10px;
+                height: 100px;
+                width: 100px;
+                z-index: 2;
+            }
+
+            #filter_sub .filter_pic {
+                width:640px;
+                height:480px;
+                position: absolute;
+                z-index: 1;
+            }
+
+            #filter_sub .filter_adapter {
+                width: 640px;
+                height: 120px;
+                bottom: 0px;
+                position: absolute;
+                background: linear-gradient(to bottom left,rgba(0,0,0,0.1), rgba(0,0,0,0.9));
+                z-index: 2;
+            }
+
+            #filter_sub .filter_adapter .effects {
+                display: inline-block;
+                vertical-align: middle;
+                margin-top: 10px;
+                margin-left: 10px;
+                height: 100px;
+                width: 100px;
+            }
+
+            h4 {
+                color: white;
+                margin-left: 15px;
+                font-family: Verdana, Geneva, sans-serif;
+                font-size: 12px;
+            }
+
+
+			

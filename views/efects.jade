@@ -1,0 +1,36 @@
+html
+  head
+    title
+      | EFFECTS
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(type='text/javascript').
+      function biggerPreview(id){
+      var smallelem = document.getElementById(id).src;
+      var bigelem = document.getElementById('big_image');
+      bigelem.src = smallelem;
+      }
+      function prepHref(linkElement) {
+      var myImage = document.getElementById('big_image');
+      linkElement.href = myImage.src;
+      }
+  body
+    #grad1
+      #filter_sub
+        .filter_pic
+          img#big_image(src='#{img_src}')
+        .filter_adapter
+          .effects
+            img#bw(src='#{bw_img_src}', height='75px', width='75px', onclick='biggerPreview(this.id)')
+            h4 B/W
+          .effects
+            img#invert(src='#{invert_img_src}', height='75px', width='75px', onclick='biggerPreview(this.id)')
+            h4 INVERT
+          .effects
+            img#sepia(src='#{sepia_img_src}', height='75px', width='75px', onclick='biggerPreview(this.id)')
+            h4 SEPIA
+          .effects
+            img#blur(src='#{blur_img_src}', height='75px', width='75px', onclick='biggerPreview(this.id)')
+            h4 BLUR
+          .download_image
+            a(href='#', onclick='prepHref(this)', download='')
+              img(src='/images/download-button.png', style='border: none; height: 40px; width: 40px; margin-top: 10px;')
